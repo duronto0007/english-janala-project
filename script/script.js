@@ -70,11 +70,11 @@ const loadLessons = ()=>{
     console.log(word);
     const card = document.createElement('div');
     card.innerHTML = `
-         <div class="bg-white rounded-xl shadow-sm text-center py-10 px-5 space-y-4">
+         <div class="bg-white rounded-xl shadow-sm text-center py-10 px-5 space-y-4 sm:px-8 sm:py-10">
                <h2 class="font-bold text-xl">${word.word?word.word: "No word found"}</h2>
                <p class="font-semibold">Meaning / Pronounciation</p>
                <div class="text-2xl font-medium font-bangla">${word.meaning ? word.meaning : "No word meaning found"} / ${word.pronunciation? word.pronunciation : "No word pronunciation found"}</div>
-               <div class="flex justify-between items-center">
+               <div class="flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-3 sm:gap-0">
                   <button onClick="loadWordDetails(${word.id})" class="btn bg-[#1A91ff10] hover:bg-[#1A91ff80]"><i class="fa-solid fa-circle-info"></i></button>
                   <button onclick="pronounceWord('${word.word}')" class="btn bg-[#1A91ff10] hover:bg-[#1A91ff80]"><i class="fa-solid fa-volume-high"></i></button>
                </div>
